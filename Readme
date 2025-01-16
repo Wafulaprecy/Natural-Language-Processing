@@ -1,0 +1,45 @@
+# Sentiment Analysis on Amazon Review Datasets
+
+This repository contains code and resources for performing sentiment analysis on two datasets of Amazon customer reviews. The goal of this project was to build and evaluate machine learning models to classify customer sentiments as either **positive** or **negative**.
+
+## Datasets
+
+### Dataset 1
+- **Description**: Amazon reviews from the "Cell Phones & Accessories" category.
+- **Columns**: `asin`, `name`, `rating`, `date`, `verified`, `title`, `body`, `helpfulVotes`.
+- **Size**: 13,598 records.
+- **Target**: Binary classification of sentiments based on customer reviews (positive or negative).
+
+### Dataset 2
+- **Description**: Amazon reviews for various products, including phones and accessories.
+- **Columns**: `asin`, `brand`, `title`, `url`, `image`, `rating`, `reviewUrl`, `totalReviews`, `price`, `originalPrice`.
+- **Target**: Binary classification of sentiments based on customer reviews (positive or negative).
+
+## Approach
+
+### Preprocessing Steps
+1. Cleaned the text data by:
+   - Removing special characters, HTML tags, and stopwords.
+   - Lowercasing and lemmatizing the reviews.
+2. Converted the text data into numerical format using **TF-IDF Vectorizer**.
+3. Split the datasets into training and testing sets (80% train, 20% test).
+4. Trained multiple machine learning models for sentiment analysis.
+
+## Results
+
+### Dataset 1
+- **Accuracy**: 88%
+
+### Dataset 2
+- **Accuracy**: Ranged from 75% to 76% across three models.
+
+
+## Key Insights
+1. **Dataset 1** performed significantly better due to its larger size and more balanced representation of sentiments.
+2. **Dataset 2** had limited data, which might have led to lower accuracy and model performance.
+3. Models were able to classify positive and negative sentiments reasonably well, with **Logistic Regression** being the most consistent across datasets.
+
+## Future Improvements
+1. Use pre-trained models like **BERT** or **DistilBERT** for better feature extraction and classification.
+2. Augment the data for Dataset 2 to improve its performance.
+3. Explore ensemble methods to combine predictions from multiple models for better accuracy.
